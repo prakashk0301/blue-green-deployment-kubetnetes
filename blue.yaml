@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  selector:
+    matchLabels:
+      app: app
+      version: "1.0"
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: app
+        version: "1.0"
+    spec:
+      containers:
+      - name: service
+        image: <your docker hub repo>/app:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000

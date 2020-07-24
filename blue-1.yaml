@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: service
-        image: <your docker hub repo>/app:1.0
+        image: pkw0301/app:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
